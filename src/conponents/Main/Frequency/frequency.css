@@ -15,9 +15,13 @@
 .containerFrequency h3 {
   font-size: 16px;
   padding-left: 10px;
-  margin-top: 40px;
+  margin-top: 58px;
   font-weight: 600;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.containerFrequency .secondSection {
+  margin-top: 72px;
 }
 
 .containerFrequency .flexConteiner {
@@ -33,7 +37,7 @@
 }
 
 .containerFrequency button {
-  margin-top: 96px;
+  margin-top: 48px;
   width: 70%;
   margin-left: 15%;
   height: 40px;
