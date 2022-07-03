@@ -1,9 +1,23 @@
-.containerRepeatability{
-    width: 30%;
-    height: 500px;
+.active{
+    width: 80%;
+    display: flex;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     border-radius: 20px;
+    margin-bottom: 30px;
+}
+.disactive{
+    width: 30%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+.containerRepeatability{
+    height: 550px;
+    width: 350px;
+    
+    
     h2{
         text-align: center;
         font-size: 18px;
@@ -21,7 +35,7 @@
     .flexConteiner{
         display: flex;
         justify-content: space-around;
-        padding-top: 5px;
+        padding-top: 1px;
         
         input{
             text-align: center;
@@ -32,8 +46,24 @@
             margin-top: 6px;
         }
     }
+    .secondSection{
+        margin-top: 60px;
+    }
+    .jackpot{
+        position: relative;
+        .active{
+            position: absolute;
+            left:25%;
+            color:red;
+            font-size: 12px;
+        }
+        .noNumbers{
+            display: none;
+        }
+    }
+   
     button{
-        margin-top: 20px;
+        margin-top: 60px;
         width: 70% ;
         margin-left: 15%;
         height: 40px;
@@ -46,4 +76,28 @@
             background-image: linear-gradient(to right, rgba(134, 141, 130, 0.538), rgba(241, 248, 248, 0.723));
             border:1px solid rgb(47, 50, 50);
         }
+}
+.results{
+    .analisisMainNumbers{
+        margin-top: 97px;
+        height: 180px;
+        .resultMain{
+            font-size: 16px;
+            font-weight: 600;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+    .analisisJackNumbers{
+        font-family: Arial, Helvetica, sans-serif;
+        .resultJack{
+            font-size: 16px;
+            font-weight: 600;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
 }
