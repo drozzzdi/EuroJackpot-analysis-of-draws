@@ -44,7 +44,7 @@ function Repeatability(){
 
                 setHowOffenMain(0)
         
-                for(let i=0;i<data.length;i++){
+                for(let i=0;i<data.length-1;i++){
                     let firstDraws=data[i].firstNumbers
                     let idValue=data[i].id
         
@@ -55,6 +55,7 @@ function Repeatability(){
                         suitNumberY.push(idValue)
                         everyNumbersSuitDraws.push(firstDraws);
                         beforDrawsWithYNumber.push(data[i+1].firstNumbers)
+                       
                     }
                 }
             
@@ -112,7 +113,7 @@ function Repeatability(){
 
             setHowOffenJack(0)
     
-                for(let i=0;i<data.length;i++){
+                for(let i=0;i<data.length-1;i++){
 
                     let firstDraws=data[i].secondNumbers
                     let idValue=data[i].id
@@ -120,11 +121,11 @@ function Repeatability(){
                    if(firstDraws.some(fir=>fir==jackNumberX)){
                     suitJackNumberX.push(idValue)
                    }
+
                    if(firstDraws.some(fir=>fir==jackNumberY)){
                     suitJackNumberY.push(idValue)
                     everyNumbersSuitDrawsJ.push(firstDraws);
-                    beforDrawsWithYNumberJ.push(data[i+1].firstNumbers)
-                   
+                    beforDrawsWithYNumberJ.push(data[i+1].secondNumbers)
                    }
                 }
 
@@ -143,18 +144,16 @@ function Repeatability(){
                         
                         if(whatNumbersJ.some(el=>el==j)){
                             howOften++;
-                        }
-                        
+                        } 
                     }
                     
                     if(howOften>4){
                         mostOffenNrJ.push(j);
-                        
                     }  
-
                 }
-                setMostOffenMainNumbers([mostOffenNrJ])
-                console.log(mostOffenNrJ)
+                setMostOffenJackNumbers([mostOffenNrJ])
+                console.log(mostOffenJackNumbers)
+                
 
                 //checking how often the number X appears after the number Y in two additional numbers
                 
@@ -237,15 +236,16 @@ function Repeatability(){
             className="RepeatButton"
             onClick={CheckTheResult}>Sprawdź</button>
             </div>
-            <div className='results'>
+            <div className={changeClass?"results":"noresults"}>
                 <div className='analisisMainNumbers'>
                     <div className='resultMain'> Liczba {mainNumberX} występuje po liczbie {mainNumberY}: <span>{howOffenMain}</span> raz/y </div>
                     <p>Najczęściej występujące liczby po liczbie {mainNumberY} w kolejnym losowaniu to: </p>
-                    <p></p>
+                   <div>{mostOffenMainNumbers}</div>
                 </div>
                  <div className='analisisJackNumbers'>
                     <div className='resultJack'> Liczba {jackNumberX} występuje po liczbie {jackNumberY}: <span>{howOffenJack}</span> raz/y </div>
                     <p>Najczęściej występujące liczby po liczbie {jackNumberY} w kolejnym losowaniu to: </p>
+                    <div>{mostOffenJackNumbers}</div>
                  </div>
                  
             </div>

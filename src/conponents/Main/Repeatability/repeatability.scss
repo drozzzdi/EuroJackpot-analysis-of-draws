@@ -14,8 +14,8 @@
     margin-bottom: 30px;
 }
 .containerRepeatability{
-    height: 550px;
-    width: 350px;
+    height: 490px;
+    width: 300px;
     
     
     h2{
@@ -47,15 +47,17 @@
         }
     }
     .secondSection{
-        margin-top: 60px;
+        margin-top: 30px;
     }
     .jackpot{
         position: relative;
         .active{
             position: absolute;
             left:25%;
+            width: 160px;
             color:red;
             font-size: 12px;
+            box-shadow: none;
         }
         .noNumbers{
             display: none;
@@ -63,7 +65,7 @@
     }
    
     button{
-        margin-top: 60px;
+        margin-top: 40px;
         width: 70% ;
         margin-left: 15%;
         height: 40px;
@@ -78,6 +80,7 @@
         }
 }
 .results{
+    display: block;
     .analisisMainNumbers{
         margin-top: 97px;
         height: 180px;
@@ -99,5 +102,12 @@
         p{
             font-size: 14px;
         }
+        .pInJackResults{
+            padding-left: 20px;
+        }
     }
+
+}
+.noresults{
+    display: none;
 }
