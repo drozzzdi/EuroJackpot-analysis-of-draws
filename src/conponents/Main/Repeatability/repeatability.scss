@@ -7,16 +7,17 @@
     margin-bottom: 30px;
 }
 .disactive{
-    width: 30%;
+    width: 29%;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     border-radius: 20px;
     margin-bottom: 30px;
+    flex-grow: 1;
+    margin-left: 20px;
 }
 .containerRepeatability{
     height: 490px;
     width: 300px;
-    
     
     h2{
         text-align: center;
@@ -92,18 +93,33 @@
         p{
             font-size: 14px;
         }
+        .resultContener{
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-around;
+            font-weight: 500;
+            color: rgb(200, 5, 5);
+        }
     }
     .analisisJackNumbers{
-        font-family: Arial, Helvetica, sans-serif;
+        
         .resultJack{
             font-size: 16px;
             font-weight: 600;
+            font-family: Arial, Helvetica, sans-serif;
         }
         p{
             font-size: 14px;
         }
         .pInJackResults{
             padding-left: 20px;
+        }
+        .resultContener{
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-around;
+            font-weight: 500;
+            color: rgb(200, 5, 5);
         }
     }
 

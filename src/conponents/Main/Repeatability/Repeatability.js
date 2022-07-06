@@ -22,9 +22,56 @@ function Repeatability(){
     const [mostOffenJackNumbers,setMostOffenJackNumbers]=useState([]);
 
     //change class
-    const[changeClass,setChangeClass]=useState(1);
+    const[changeClass,setChangeClass]=useState(0);
 
+    //displaying the main result from the scoreboard
+    const MainResults=()=>{
+        let numbers=mostOffenMainNumbers;
+        if(numbers[0].length>0){
+           
+                return(
+                    <div className='resultContener'>
+                        <div>{numbers[0][0]}</div>
+                        <div>{numbers[0][1]}</div>
+                        <div>{numbers[0][2]}</div>
+                        <div>{numbers[0][3]}</div>      
+                    </div>
+                )
+            }
+            else{
+                return(
+                    <div className='resultContener'>
+                        <div>Nie znaleziono liczby, występującej wyjątkowo często</div>
+                    </div>
+                )
+            }    
+      
+    }
 
+    const JackResults=()=>{
+        let numbers=mostOffenJackNumbers;
+        if(numbers[0].length>0){
+           
+           
+                return(
+                    <div className='resultContener'>
+                        <div>{numbers[0][0]}</div>
+                        <div>{numbers[0][1]}</div>
+                        <div>{numbers[0][2]}</div>
+                        <div>{numbers[0][3]}</div>      
+                    </div>
+                )
+            }  
+            else{
+                return(
+                    <div className='resultContener'>
+                        <div>Nie znaleziono liczby, występującej wyjątkowo często</div>
+                    </div>
+                )
+            } 
+           
+    }
+  
 
     const CheckTheResult=()=>{
         
@@ -58,6 +105,7 @@ function Repeatability(){
                        
                     }
                 }
+    
             
                 setDrawsWithNumbersX(suitNumberX);
                 setDrawsWithNumbersY(suitNumberY);
@@ -74,8 +122,8 @@ function Repeatability(){
                         
                         if(whatNumbers.some(el=>el==j)){
                             howOften++;
+                      //      console.log(j)
                         }
-                        
                     }
                     
                     if(howOften>3){
@@ -85,6 +133,7 @@ function Repeatability(){
 
                 }
                 setMostOffenMainNumbers([mostOffenNr])
+               // console.log(everyNumbersSuitDraws)
                 
 
                 //checking how often the number X appears after the number Y in main numbers
@@ -128,7 +177,8 @@ function Repeatability(){
                     beforDrawsWithYNumberJ.push(data[i+1].secondNumbers)
                    }
                 }
-
+                
+                
                 setDrawsWithJackNumbersX(suitJackNumberX)
                 setDrawsWithJackNumbersY(suitJackNumberY)
 
@@ -144,15 +194,16 @@ function Repeatability(){
                         
                         if(whatNumbersJ.some(el=>el==j)){
                             howOften++;
+                            
                         } 
                     }
                     
-                    if(howOften>4){
+                    if(howOften>5){
                         mostOffenNrJ.push(j);
                     }  
                 }
                 setMostOffenJackNumbers([mostOffenNrJ])
-                console.log(mostOffenJackNumbers)
+                
                 
 
                 //checking how often the number X appears after the number Y in two additional numbers
@@ -171,9 +222,8 @@ function Repeatability(){
         else{
             setChangeClass(0);
         }
-        
     }
-
+    
     return(
         <div className={changeClass?"active":"disactive"}>
             <div className='containerRepeatability'>
@@ -240,12 +290,13 @@ function Repeatability(){
                 <div className='analisisMainNumbers'>
                     <div className='resultMain'> Liczba {mainNumberX} występuje po liczbie {mainNumberY}: <span>{howOffenMain}</span> raz/y </div>
                     <p>Najczęściej występujące liczby po liczbie {mainNumberY} w kolejnym losowaniu to: </p>
-                   <div>{mostOffenMainNumbers}</div>
+                    <div>{MainResults()}</div>
+                   
                 </div>
                  <div className='analisisJackNumbers'>
                     <div className='resultJack'> Liczba {jackNumberX} występuje po liczbie {jackNumberY}: <span>{howOffenJack}</span> raz/y </div>
                     <p>Najczęściej występujące liczby po liczbie {jackNumberY} w kolejnym losowaniu to: </p>
-                    <div>{mostOffenJackNumbers}</div>
+                    <div>{JackResults()}</div>
                  </div>
                  
             </div>
