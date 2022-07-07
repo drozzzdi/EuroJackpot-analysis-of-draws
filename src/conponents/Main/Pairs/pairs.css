@@ -1,25 +1,38 @@
-.containerPairs {
-  width: 29%;
-  height: 500px;
+.active {
+  width: 90%;
+  display: flex;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.disactive {
+  width: 29%;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 20px;
+  margin-bottom: 30px;
   flex-grow: 1;
-  margin-left: 40px;
-  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.containerPairs {
+  height: 490px;
+  width: 300px;
 }
 
 .containerPairs h2 {
   text-align: center;
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
 }
 
 .containerPairs h3 {
   font-size: 16px;
   padding-left: 10px;
-  margin-top: 40px;
+  margin-top: 20px;
   font-weight: 600;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -27,6 +40,7 @@
 .containerPairs .flexConteiner {
   display: flex;
   justify-content: space-around;
+  position: relative;
 }
 
 .containerPairs .flexConteiner input {
@@ -37,11 +51,25 @@
 }
 
 .containerPairs .flexConteiner p {
-  margin-top: 11px;
+  margin-top: 10px;
+}
+
+.containerPairs .flexConteiner .noNumbers {
+  display: none;
+}
+
+.containerPairs .flexConteiner .activeNumbers {
+  position: absolute;
+  left: 25%;
+  top: 42px;
+  width: 160px;
+  color: red;
+  font-size: 12px;
+  box-shadow: none;
 }
 
 .containerPairs button {
-  margin-top: 15px;
+  margin-top: 35px;
   width: 70%;
   margin-left: 15%;
   height: 40px;
@@ -54,4 +82,8 @@
 .containerPairs button:hover {
   background-image: linear-gradient(to right, rgba(134, 141, 130, 0.538), rgba(241, 248, 248, 0.723));
   border: 1px solid #2f3232;
+}
+
+.noResults {
+  display: none;
 }

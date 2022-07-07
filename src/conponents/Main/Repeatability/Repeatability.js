@@ -18,15 +18,16 @@ function Repeatability(){
     //how often the number X appears after the number Y
     const [howOffenMain,setHowOffenMain]=useState(0);
     const [howOffenJack,setHowOffenJack]=useState(0);
-    const [mostOffenMainNumbers,setMostOffenMainNumbers]=useState([]);
-    const [mostOffenJackNumbers,setMostOffenJackNumbers]=useState([]);
+    const [mostOffenMainNumbers,setMostOffenMainNumbers]=useState([0]);
+    const [mostOffenJackNumbers,setMostOffenJackNumbers]=useState([0]);
 
     //change class
     const[changeClass,setChangeClass]=useState(0);
 
     //displaying the main result from the scoreboard
     const MainResults=()=>{
-        let numbers=mostOffenMainNumbers;
+        let numbers=[];
+        numbers=mostOffenMainNumbers;
         if(numbers[0].length>0){
            
                 return(
@@ -49,7 +50,8 @@ function Repeatability(){
     }
 
     const JackResults=()=>{
-        let numbers=mostOffenJackNumbers;
+        let numbers=[];
+        numbers=mostOffenJackNumbers;
         if(numbers[0].length>0){
            
            

@@ -1,5 +1,6 @@
 import './pairs.css';
-import {useState} from 'react';
+import {useState,useRef} from 'react';
+import data from "../../../drawData";
 
 function Pairs(){
 
@@ -8,7 +9,25 @@ function Pairs(){
     const [jackPairsNumberX, setJackPairsNumberX]=useState('');
     const [jackPairsNumberY, setJackPairsNumberY]=useState('');
 
+    const[changeClass,setChangeClass]=useState(0);
+
+    
+    const CheckPairs=()=>{
+        
+        if(mainPairsNumberX>0 && mainPairsNumberY>0 || jackPairsNumberX>0 && jackPairsNumberY>0){
+            setChangeClass(1)
+
+            if(mainPairsNumberX>0 && mainPairsNumberY>0){
+                console.log('działa')
+            }
+        }
+        else{
+            setChangeClass(0)
+        }
+    }
+
     return(
+        <div className={changeClass?"active":"disactive"}>
         <div className="containerPairs">
             <h2>Analiza par liczb:</h2>
             <h3>Analiza głównyh liczb 1-50:</h3>
@@ -60,8 +79,25 @@ function Pairs(){
                 value={jackPairsNumberY}
                 onChange={(e)=>setJackPairsNumberY(e.target.value)}
                 ></input>
+                <div className={changeClass?"noNumbers":"activeNumbers"}>Nie wybrałeś żadnych liczb!</div>
             </div>
-            <button>Sprawdź</button>
+            <button
+            onClick={CheckPairs}>Sprawdź</button>
+        </div>
+        <div className={changeClass?"results":"noResults"}>
+                <div className='analisisMainNumbers'>
+                    <div className='resultMain'> Liczba  występuje z liczbą w : <span></span> losowaniach </div>
+                    <p>Najczęściej występujące liczby z liczbą to: </p>
+                    <div>{}</div>
+                   
+                </div>
+                 <div className='analisisJackNumbers'>
+                    <div className='resultJack'> Liczba  występuje z liczbą w : <span></span> losowaniach </div>
+                    <p>Najczęściej występujące liczby z liczbą to: </p>
+                    <div>{}</div>
+                 </div>
+                 
+            </div>
         </div>
     )
 }

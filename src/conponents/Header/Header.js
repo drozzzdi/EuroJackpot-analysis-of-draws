@@ -5,6 +5,7 @@ function Header(){
     return(
         <div className="containerHeader">
             <img src={img} alt=""/>
+            <h2 className='headerH2'>EuroJacpot - analiza liczb</h2>
         </div>
     )
 }

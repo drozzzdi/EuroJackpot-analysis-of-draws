@@ -4,6 +4,7 @@ import Pairs from './Pairs/Pairs';
 import Frequency from './Frequency/Frequency';
 
 function Main(){
+   
     return(
         <section className="containerMain">
             <Repeatability/>
