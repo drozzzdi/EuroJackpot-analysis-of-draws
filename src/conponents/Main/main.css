@@ -1,5 +1,6 @@
 .containerMain {
   width: 100%;
+  min-height: 79vh;
   background-color: white;
   display: flex;
   justify-content: space-around;

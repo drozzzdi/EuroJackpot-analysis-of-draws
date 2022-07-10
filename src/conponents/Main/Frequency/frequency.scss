@@ -1,13 +1,24 @@
-.containerFrequency{
-    width: 29%;
-    height: 500px;
+.active{
+    width: 90%;
+    display: flex;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     border-radius: 20px;
-    flex-grow: 1;
-    margin-left:20px;
-    margin-right: 20px;
     margin-bottom: 30px;
+    
+}
+.disactive{
+    width: 29%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    flex-grow: 1;
+    margin-left: 20px;
+}
+.containerFrequency{
+    height: 490px;
+    width: 300px;
 
     h2{
         text-align: center;
@@ -28,10 +39,23 @@
         display: flex;
         justify-content: space-around;
         padding-top: 10px;
+        position: relative;
         input{
             text-align: center;
             height: 30px;
             margin-top: 8px;
+        }
+        .active{
+            position: absolute;
+            left:25%;
+            top:100%;
+            width: 160px;
+            color:red;
+            font-size: 12px;
+            box-shadow: none;
+        }
+        .noNumbers{
+            display: none;
         }
     }
     button{
@@ -48,4 +72,18 @@
         background-image: linear-gradient(to right, rgba(134, 141, 130, 0.538), rgba(241, 248, 248, 0.723));
         border:1px solid rgb(47, 50, 50);
     }  
+}
+.noresults{
+    display: none;
+    
+}
+.results{
+    display: block;
+    .analisisMainNumbers{
+        margin-top: 170px;
+        margin-left: 50px;
+    }
+    .analisisJackNumbers{
+        margin-left: 50px;
+    }
 }
